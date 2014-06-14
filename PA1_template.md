@@ -32,7 +32,7 @@ hist(totStepsEachDay$steps, xlab="Total steps taken per day",
 ![plot of chunk MeanSteps](figure/MeanSteps.png) 
 
 ```r
-## Calculate and report Mean of total number of steps each day
+## Calculate and report Mean of total number of steps taken each day
 meanOfSteps <- mean(totStepsEachDay$steps)
 meanOfSteps
 ```
@@ -42,7 +42,7 @@ meanOfSteps
 ```
 
 ```r
-## Calculate and report Median of total number of steps each day
+## Calculate and report Median of total number of steps taken each day
 medianOfSteps <- median(totStepsEachDay$steps)
 medianOfSteps
 ```
@@ -144,7 +144,7 @@ Mean of total steps taken each day in imputed data = **1.0766 &times; 10<sup>4</
 
 Median of total steps taken each day in imputed data = **1.0766 &times; 10<sup>4</sup>**
 
-These values are similar to the values obtained on the estimate earlier for data set that had NAs removed.  There is no impact of imputing missing values on estimates of total daily number of steps since the strategy to replace missing values is to replace these missing values with mean of total steps taken for each interval.  Calculating mean once by omitting missing values and then calculating again by replacing those missing values by the mean of each interval produces the same result.
+These values are similar to the values obtained on the estimate earlier for data set that had NAs removed.  There is no impact of imputing missing values on estimates of total daily number of steps since the strategy to replace missing values is to replace these missing values with mean of total steps taken for each interval.  Calculating mean once by omitting missing values and then calculating again by replacing those missing values by the mean of each interval produces the same result as evident above.
 
 ## Are there differences in activity patterns between weekdays and weekends?
 
