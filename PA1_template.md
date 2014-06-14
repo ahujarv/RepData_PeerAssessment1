@@ -2,7 +2,7 @@
 
 
 ```r
-## Set the option echo=TRUE globally
+## Set the option echo=TRUE globally for all code chunks
 opts_chunk$set(echo=TRUE)
 ```
 ## Loading and preprocessing the data
