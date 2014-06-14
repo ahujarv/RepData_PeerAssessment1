@@ -1,6 +1,7 @@
 # Reproducible Research: Peer Assessment 1
 
 ```{r globalOptions}
+## Set the option echo=TRUE globally
 opts_chunk$set(echo=TRUE)
 ```
 ## Loading and preprocessing the data
@@ -49,7 +50,7 @@ plot(activityPattern$interval, activityPattern$steps, type="l", xlab="Interval",
 intervalMaxSteps <- activityPattern[which.max(activityPattern[, 2]), 1]
 intervalMaxSteps
 ```
-Interval, that on average across all days contains maximum number of steps = **`r intervalMaxSteps`**
+Interval, that on average across all days, contains maximum number of steps = **`r intervalMaxSteps`**
 
 ## Imputing missing values
 ```{r}
@@ -59,11 +60,11 @@ rowsWithNAs
 ```
 Total number of missing values or number of rows with missing values = **`r rowsWithNAs`**
 
-For imputing missing data, the strategy chosen for the purpose of this assignment is mean of steps taken in an interval calculated across all days. This is one of the stragies recomended in the assignment.
+For imputing missing data, the strategy chosen for the purpose of this assignment is mean of steps taken in an interval calculated across all days. This is one of the strategies recommended in the assignment.
 ```{r replaceMissing}
 ## This function replaces missing values with mean of steps taken per interval
 ## across all days.
-## As per instructions, this function follows one of the suggested stragies
+## As per instructions, this function follows one of the suggested strategies
 ## to replace missing values, which is to use mean of steps taken per interval
 ## across all days.
 replaceMissing <- function() {
@@ -96,14 +97,14 @@ Mean of total steps taken each day in imputed data = **`r meanStepsi`**
 
 Median of total steps taken each day in imputed data = **`r medianStepsi`**
 
-These values are similar to the values obtained on the estimate earlier for data set that had NAs removed.
-There is no impact of imputing missing values on estimates of total daily number of steps since the strategy to replace missing values is to replace them with mean of total steps taken for each interval.  Calculating mean once omitting missing values and then by replacing those missing values by the mean of each interval procuces same result.
+These values are similar to the values obtained on the estimate earlier for data set that had NAs removed.  There is no impact of imputing missing values on estimates of total daily number of steps since the strategy to replace missing values is to replace these missing values with mean of total steps taken for each interval.  Calculating mean once by omitting missing values and then calculating again by replacing those missing values by the mean of each interval produces the same result.
 
 ## Are there differences in activity patterns between weekdays and weekends?
 ```{r weekEndWeekDay}
-## Create a vector of weeddays
+## Create a vector of weekdays
 wdays <- c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday")
 ## create a vector labeling dates in the dataframe as weekdays or weekends
+## appropriately
 categorizedDays <- sapply(activityMissingReplaced$date, 
                           function (x) ifelse(weekdays(x) %in% wdays, 
                                               "weekday", "weekend"))
